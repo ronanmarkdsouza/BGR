@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biological Gender Recognition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}" />
+</head>
+<body>
+    <div id="speechContainer">
+        <h1>
+            Upload Audio
+        </h1>
+
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file" />
+            <br>
+            <input type="submit" id="submitButton" value="Get Gender" />
+        </form>
+        
+        {% if gender !=""%}
+        <div id="genderContainer">
+            <h1>Gender</h1>
+            <p id="genderText">The person is a {{gender}}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
